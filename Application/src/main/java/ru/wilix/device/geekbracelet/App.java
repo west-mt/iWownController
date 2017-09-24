@@ -12,22 +12,18 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
-import org.acra.ACRA;
-import org.acra.annotation.ReportsCrashes;
 
 import ru.wilix.device.geekbracelet.receiver.NotificationMonitor;
 
 /**
  * Created by Aloyan Dmitry on 29.08.2015
  */
-@ReportsCrashes(formUri = "http://acra-server.wilix.ru/logs/iWownController")
 public class App extends Application {
     public static Context mContext;
     public static SharedPreferences sPref;
 
     @Override
     public void onCreate() {
-        ACRA.init(this);
         super.onCreate();
         App.mContext = getApplicationContext();
         App.sPref = PreferenceManager.getDefaultSharedPreferences(App.mContext);
